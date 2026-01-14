@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/uploads/:path*',
-        destination: 'http://localhost:3000/uploads/:path*',
+        destination: `${process.env.CMS_URL || 'http://localhost:3000'}/uploads/:path*`,
       },
     ];
   },

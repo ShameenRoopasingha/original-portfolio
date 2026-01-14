@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { useProfile } from '@/lib/data';
-import myImage from '@/images/image.png';
+
+const myImage = '/images/image.png';
 
 type Phase = 'init' | 'scanning' | 'detected' | 'processing' | 'reveal' | 'complete';
 
@@ -162,7 +163,7 @@ export function Hero() {
                                 <div className="image-container">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
-                                        src={typeof imgSrc === 'string' ? imgSrc : imgSrc.src}
+                                        src={imgSrc}
                                         alt={PROFILE.name}
                                         onError={() => {
                                             console.log('Image load failed, switching to fallback');

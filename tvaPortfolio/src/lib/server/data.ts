@@ -9,12 +9,13 @@ export async function getProfile() {
     // Fallback if seeded data missing, though it shouldn't be
     if (!profile) {
         return {
+            id: 'fallback-id',
             name: 'Variant',
             role: 'Unknown',
             summary: 'No data found.',
             tagline: 'TVA',
             imageUrl: '/images/image.png', // Default
-            colorFilter: 'tva'
+            colorFilter: 'tva',
         };
     }
 
