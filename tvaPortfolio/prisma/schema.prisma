@@ -44,16 +44,16 @@ model Experience {
 }
 
 model Project {
-  id          String   @id @default(uuid())
-  title       String
-  description String
-  techStack   String[]
-  order       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  demoUrl     String?
-  repoUrl     String?
-  inDevelopment Boolean @default(false)
+  id            String   @id @default(uuid())
+  title         String
+  description   String
+  techStack     String[]
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  demoUrl       String?
+  repoUrl       String?
+  inDevelopment Boolean  @default(false)
 }
 
 model Skill {
@@ -75,9 +75,9 @@ model Reference {
 }
 
 model Admin {
-  id        String   @id
+  id        String   @id @default(uuid())
   username  String   @unique
   password  String
   createdAt DateTime @default(now())
-  updatedAt DateTime
+  updatedAt DateTime @updatedAt
 }

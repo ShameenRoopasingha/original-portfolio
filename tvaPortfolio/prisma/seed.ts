@@ -83,9 +83,19 @@ async function main() {
     console.log('Start seeding ...')
 
     // Profile
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { imageUrl, ...profileData } = PROFILE
     await prisma.profile.deleteMany()
     await prisma.profile.create({
-        data: PROFILE,
+        data: {
+            ...profileData,
+            images: {
+                create: {
+                    url: imageUrl,
+                    isActive: true,
+                },
+            },
+        },
     })
     console.log('Created Profile')
 
